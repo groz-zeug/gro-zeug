@@ -62,7 +62,7 @@ app.get('/tools', function (req, res) {
     const $ = cheerio.load(resp);
     const tools = [];
 
-    $(".tool-meta-title", resp).each(function() {
+    $(".tool-meta-title", resp).each(function () {
       const tool = $(this).find("h2").find("a").text();
 
       tools.push({ tool })
@@ -74,7 +74,9 @@ app.get('/tools', function (req, res) {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    return (
+    return (<div><pre>{JSON.stringify(ideas)}</pre></div>)
+    )
   </React.StrictMode>
 );
 
