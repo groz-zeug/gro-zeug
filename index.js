@@ -9,9 +9,9 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
-app.get("/", function (req, res) {
-  res.json({ message: "Web Scrapping Ideas" });
-});
+// app.get("/", function (req, res) {
+//   res.json({ message: "Web Scrapping Ideas" });
+// });
 
 app.get("/ideas", (req, res) => {
   axios(ideasURL)
@@ -70,5 +70,12 @@ app.get('/tools', function (req, res) {
     res.json(tools);
   })
 })
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 app.listen(PORT || 8000, () => console.log(`Server running on PORT ${PORT}`));
